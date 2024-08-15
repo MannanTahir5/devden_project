@@ -11,7 +11,6 @@ class Product < ApplicationRecord
 
   enum category: {
     male: 0,
-    female: 1,
-    other: 2
+    female: 1
   }
 end
