@@ -1,0 +1,30 @@
+.navbar-custom {
+    background-color: #003366;
+}
+
+.hero-section {
+    background-image: url('/assets/top-view-vintage-suitcase-with-casual-clothes.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .text-center {
+    z-index: 2;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
