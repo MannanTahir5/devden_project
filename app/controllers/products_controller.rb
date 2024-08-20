@@ -1,12 +1,9 @@
 class ProductsController < ApplicationController
   def index
-    if params[:category] == 'male'
-      @product = Product.where(category: 'male')
-    elsif params[:category] == 'female'
-      @product = Product.where(category: 'female')
-    else
-      @product = Product.all
-    end
+    if params[:category]
+      @Product = Product.where(category: params[:category])
+      else
+      @Product = Product.all
   end
     
   def show
