@@ -7,9 +7,9 @@
     </div>
     <div class="col-md-6">
       <h1><%= @product.name %></h1>
-      <h3><strong>$<%= @product.price %></strong></h3>
+      <h3><strong>$<%= @product.price %></strong></p>
       <p><%= @product.description %></p>
-      <%= link_to 'Back to List', products_path, class: "btn btn-secondary" %>
+      <%= link_to 'Return', :back, class: "btn btn-danger" %>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   include Ransackable
-
+  
   has_one_attached :image
 
   enum size: {

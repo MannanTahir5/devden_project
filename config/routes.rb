@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'male', to: 'products#male'
-  get 'female', to: 'products#female'
   resources :products
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
