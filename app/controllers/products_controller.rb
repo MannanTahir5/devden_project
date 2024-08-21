@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
+
   def index
     if params[:category]
-      @product = Product.where(category: params[:category])
+      @pagy, @product = pagy(Product.where(category: params[:category]), limit: 6)
     else
-      @product = Product.all
+      @pagy, @product = pagy(Product.all, limit: 9) 
     end
   end
 
