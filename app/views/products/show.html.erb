@@ -1,4 +1,6 @@
 <%= render '/home/navbar' %>
+<br>
+<br>
 
 <div class="container">
   <div class="row">
@@ -9,7 +11,7 @@
       <h1><%= @product.name %></h1>
       <h3><strong>$<%= @product.price %></strong></p>
       <p><%= @product.description %></p>
-      <%= link_to 'Return', :back, class: "btn btn-danger" %>
+      <%= link_to 'Return', :back, class: "btn btn-primary" %>
     </div>
   </div>
 </div>
