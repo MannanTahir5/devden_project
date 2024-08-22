@@ -31,6 +31,7 @@ gem 'activeadmin'
 gem 'sass-rails', '~>6.0'
 gem 'pagy'
 gem 'cssbundling-rails'
+gem 'ransack'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

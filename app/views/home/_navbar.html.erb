@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark text-bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand">DevDen Apparel</a>
+    <%= link_to 'Devden Apparel', root_path, class: 'navbar-brand' %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,12 +19,10 @@
         </li>
       </ul>
       <form class="d-flex px-2 btn-sm" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2" type="search" name=q[name_cont] placeholder="Search by name" aria-label="Search">
         <button class="btn btn-secondary btn-sm" type="submit">Search</button>
       </form>
       <%= button_to 'Sign out', destroy_customer_session_path, class: "btn btn-success btn-sm", method: :delete %>
     </div>
   </div>
 </nav>
-<br>
-<br>
