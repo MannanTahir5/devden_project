@@ -1,0 +1,39 @@
+<%= render 'home/navbar' %>
+<div class="container">
+  <h1>Shopping Cart</h1>
+
+  <% if @cart_items.any? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @cart_items.each do |cart_item| %>
+          <tr>
+            <td><%= image_tag(cart_item.product.image, size: "80x80") if cart_item.product.image.attached? %></td>
+            <td><%= cart_item.product.name %></td>
+            <td>$<%= cart_item.price %></td>
+            <td><%= button_to 'Remove', delete_from_cart_cart_path(cart_item), method: :delete, class: "btn btn-danger" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="2"></td>
+          <td><strong>Total:</strong></td>
+          <td>$<%= @cart_items.sum { |item| item.price } %></td>
+        </tr>
+      </tfoot>
+    </table>
+  <% end %>
+ 
+  <%= link_to 'Continue Shopping', products_path, class: 'btn btn-secondary' %>
+  <button class="btn btn-primary">Proceed to Checkout</button>
+</div>

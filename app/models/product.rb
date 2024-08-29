@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
   include Ransackable
   has_one_attached :image
+  has_many :carts
+  has_many :orders, through: :carts
 
   enum size: {
     small: 0,

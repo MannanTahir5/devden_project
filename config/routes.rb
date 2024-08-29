@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  resources :products
+  resources :orders, only: [:index, :show]
+  
+  resources :carts, only: [:index] do
+    member do
+      delete :delete_from_cart
+    end
+  end
+
+  resources :products, only: [:show, :index] do
+    post 'add_to_cart', on: :member
+  end
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :customers
