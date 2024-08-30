@@ -7,8 +7,8 @@ class CartsController < ApplicationController
   end
 
   def add_to_cart
-    @cart_item = Cart.find_or_initialize_by(order: order, product: product)
-    @cart_item.price = product.price
+    @cart_item = Cart.find_or_initialize_by(order: @order, product: @product)
+    @cart_item.price = @product.price
 
     if @cart_item.save
       flash[:success] = "Product added to cart!"
