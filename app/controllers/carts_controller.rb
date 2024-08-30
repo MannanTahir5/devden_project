@@ -1,8 +1,8 @@
 class CartsController < ApplicationController
-  before_action :set_order
+  before_action :set_order, :current_order
 
   def index
-    @order = Order.find_by(customer: current_customer, status: 'pending')
+    order = current_order
     @cart_items = @order.carts.includes(:product) if @order
   end
 
@@ -27,8 +27,12 @@ class CartsController < ApplicationController
     redirect_to carts_path, notice: 'Product removed from cart'
   end
 
-  private
-  def set_order
-    order = Order.find_or_create_by(customer: current_customer, status: 'pending')
-  end
+    private
+    def set_order
+      order = Order.find_or_create_by(customer: current_customer, status: 'pending')
+    end
+
+    def current_order
+      @order = Order.find_by(customer: current_customer, status: 'pending')
+    end
 end
