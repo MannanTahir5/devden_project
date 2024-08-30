@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-
   def index
     @q = Product.ransack(params[:q])
 
