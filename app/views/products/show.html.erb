@@ -14,7 +14,7 @@
       <p>Available Sizes</p>
       <p><%= @product.size.capitalize %></p>
       <%= link_to 'Return', :back, class: "btn btn-primary" %>
-      <%= button_to 'Add to Cart', add_to_cart_product_path(@product), method: :post, class: "btn btn-secondary"%>
+      <%= button_to 'Add to Cart', add_to_cart_cart_path(@product), method: :post, class: "btn btn-secondary"%>
     </div>
   </div>
 </div>
