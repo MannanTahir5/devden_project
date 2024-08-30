@@ -27,6 +27,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem 'devise'
+gem 'byebug'
 gem 'activeadmin'
 gem 'sass-rails', '~>6.0'
 gem 'pagy'
