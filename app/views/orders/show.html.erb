@@ -1,0 +1,31 @@
+<%= render 'home/navbar'%>
+<br>
+<h1>Order Details</h1>
+
+<div class="card">
+  <div class="card-body">
+    <h3>Order #<%= @order.id %></h1>
+    <h5 class="card-title">Status: <%= @order.status.capitalize %></h5>
+    <p class="card-text"><strong>Order Date:</strong> <%= @order.created_at.strftime("%Y-%m-%d") %></p>
+    <p class="card-text"><strong>Total Price:</strong> <%= @order.carts.sum { |item| item.price } %></p>
+
+    <h5 class="mt-4">Items</h5>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order.carts.each do |item| %>
+          <tr>
+            <td><%= item.product.name %></td>
+            <td><%= number_to_currency(item.product.price) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'Back to Orders', orders_path, class: "btn btn-primary" %>
+  </div>
+</div>

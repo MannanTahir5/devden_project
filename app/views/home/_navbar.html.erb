@@ -26,6 +26,7 @@
           <%= link_to 'View Cart', carts_path, class: 'nav-link' %>
         </li>
       </ul>
+      <h5 class="text-white"><%= current_customer.email %></h5>
       <form class="d-flex px-2" role="search">
         <input class="form-control me-2" type="search" name="q[name_cont]" placeholder="Search by name" aria-label="Search">
         <button class="btn btn-secondary btn-sm" type="submit">Search</button>

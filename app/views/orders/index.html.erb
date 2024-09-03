@@ -1,0 +1,27 @@
+<%= render 'home/navbar'%>
+<br>
+<h1>Orders</h1>
+
+<table class="table ">
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Status</th>
+      <th>Order Date</th>
+      <th>Total Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.status %></td>
+        <td><%= order.created_at.strftime("%Y-%m-%d") %></td>
+				<td><%= order.carts.sum {|item| item.price} %></td>
+        <td>
+          <%= link_to 'View', order_path(order), class: "btn btn-primary" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

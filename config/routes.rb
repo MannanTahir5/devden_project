@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :orders, only: [:index, :show]
+  
+  resources :orders do
+    resources :payment_methods, only: [:new, :create]
+  end
   
   resources :carts, only: [:index] do
     member do
