@@ -37,6 +37,5 @@ ActiveAdmin.register Product do
         image_tag url_for(product.image) if product.image.attached?
       end
     end
-    active_admin_comments
   end
 end

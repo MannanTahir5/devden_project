@@ -1,4 +1,5 @@
 <%= render 'home/navbar' %>
+<br>
 <div class="container">
   <h1>Shopping Cart</h1>
 
@@ -32,8 +33,11 @@
         </tr>
       </tfoot>
     </table>
+
+    <%= link_to 'Proceed to Checkout', new_order_payment_method_path(@order), class: 'btn btn-secondary' %>
+  <% else %>
+    <h3>Your cart is empty</h3>
   <% end %>
  
   <%= link_to 'Continue Shopping', products_path, class: 'btn btn-secondary' %>
-  <button class="btn btn-primary">Proceed to Checkout</button>
 </div>

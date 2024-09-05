@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
-  before_action :current_order, only: [:index]
-  before_action :set_order, :set_product, only: [:add_to_cart]
+  before_action :set_order
+  before_action :set_product, only: :add_to_cart
 
   def index
     @cart_items = @order.carts.includes(:product) if @order
@@ -25,13 +25,9 @@ class CartsController < ApplicationController
     redirect_to carts_path, notice: 'Product removed from cart'
   end
 
-    private
+  private
     def set_order
       @order = Order.find_or_create_by(customer: current_customer, status: 'pending')
-    end
-
-    def current_order
-      @order = Order.find_by(customer: current_customer, status: 'pending')
     end
 
     def set_product
