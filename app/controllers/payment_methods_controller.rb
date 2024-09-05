@@ -1,5 +1,4 @@
 class PaymentMethodsController < ApplicationController
-  before_action :authenticate_customer!
   before_action :set_order
 
   def new

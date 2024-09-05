@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-  before_action :authenticate_customer!
   before_action :set_order
   before_action :set_product, only: :add_to_cart
 
@@ -26,7 +25,7 @@ class CartsController < ApplicationController
     redirect_to carts_path, notice: 'Product removed from cart'
   end
 
-    private
+  private
     def set_order
       @order = Order.find_or_create_by(customer: current_customer, status: 'pending')
     end
